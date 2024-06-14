@@ -1,3 +1,8 @@
+Este trabalho tem como objetivo aplicar e integrar todos os conhecimentos adquiridos ao longo do semestre, demonstrando a compreensão e a habilidade de utilizar as diversas ferramentas e conceitos abordados nas aulas. Através deste projeto, busca-se consolidar o aprendizado e evidenciar a capacidade de resolver problemas complexos de maneira interdisciplinar, refletindo o progresso acadêmico alcançado durante o curso.
+Nesse trabalho usamos 
+
+
+
 Critica a IA:
 
 Utilizamos o chat GPT, ele deu informações necessárias, mas também ele deu
