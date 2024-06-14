@@ -1,0 +1,59 @@
+import java.util.Scanner;
+public class doacao{
+  public String alimentos;
+  public String bebidas;
+  public String dinheiro;
+  public String nomedoador;
+  public String nomerecebedor;
+  public String totaldeitens;
+  public double doacao;
+Scanner sc = new Scanner(System.in);
+  //metodo construtores;
+public doacao(String alimentos, String bebidas, String dinheiro, String nomedoador, String nomerecebedor, String totaldeitens){
+this.alimentos = alimentos;
+this.bebidas = bebidas;
+this.dinheiro = dinheiro;
+this.nomedoador = nomedoador;
+this.nomerecebedor = nomerecebedor;
+this.totaldeitens = totaldeitens;
+}
+//metodo get;
+public String getAlimentos(){
+  return alimentos;
+}
+public String getBebidas(){
+  return bebidas;
+}
+public String getDinheiro(){
+  return dinheiro;
+}
+public String getNomedoador(){
+  return nomedoador;
+}
+public String getNomerecebedor(){
+  return nomerecebedor;
+}
+public String getTotaldeitens(){
+  return totaldeitens;
+}
+//metodo set;
+public void setAlimentos(String alimentos){
+  this.alimentos = alimentos;
+}
+public void setBebidas(String bebidas){
+  this.bebidas = bebidas;
+}
+public void setDinheiro(String dinheiro){
+  this.dinheiro = dinheiro;
+}
+public void setNomedoador(String nomedoador) {
+  this.nomedoador = nomedoador;
+}
+public void setNomerecebedor(String nomerecebedor) {
+  this.nomerecebedor = nomerecebedor; 
+}
+public void setTotaldeitens(String totaldeitens){
+  this.totaldeitens = totaldeitens;
+  
+}
+}
