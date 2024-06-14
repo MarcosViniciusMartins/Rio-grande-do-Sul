@@ -1,0 +1,50 @@
+import java.util.Scanner;
+
+public class armazenamento extends doacao {
+  public int totalalimentos;
+  public double totaldedinheiro;
+  public int totalbebidas;
+
+  public armazenamento(int totalalimentos, int totalbebidas, double totaldedinheiro, String totaldeitens,
+String alimentos, String bebidas, String dinheiro, String nomedoador, String nomerecebedor){
+    super(alimentos, bebidas, dinheiro, nomedoador, nomerecebedor, totaldeitens);
+    this.totalalimentos = totalalimentos;
+    this.totalbebidas = totalbebidas;
+    this.totaldedinheiro = totaldedinheiro;
+  }
+
+  // metodo get;
+  public String getAlimentos() {
+    return alimentos;
+  }
+
+  public String getBebidas() {
+    return bebidas;
+  }
+
+  public String getDinheiro() {
+    return dinheiro;
+  }
+
+  public String getNomedoador() {
+    return nomedoador;
+  }
+
+  // metodo set;
+  public void setAlimentos(String alimentos) {
+    this.alimentos = alimentos;
+  }
+
+  public void setBebidas(String bebidas) {
+    this.bebidas = bebidas;
+  }
+
+  public void setDinheiro(String dinheiro) {
+    this.dinheiro = dinheiro;
+  }
+
+  public void setNomedoador(String nomedoador) {
+    this.nomedoador = nomedoador;
+  
+  }
+}
