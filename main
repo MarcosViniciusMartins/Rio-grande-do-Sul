@@ -1,0 +1,102 @@
+import java.util.ArrayList;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.File;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Scanner;
+
+public class Main {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+
+    try {
+      File arquivo = new File("pessoa.txt");
+      FileWriter fw = new FileWriter(arquivo);
+      BufferedWriter bw = new BufferedWriter(fw);
+      bw.write("ola");
+      bw.newLine();
+      bw.write("oasdlds");
+      bw.close();
+
+      FileReader fr = new FileReader(arquivo);
+      BufferedReader br = new BufferedReader(fr);
+      ArrayList<String> lista = new ArrayList<String>();
+
+      while (br.ready()) {
+        String linha = br.readLine();
+        lista.add(linha);
+      }
+      br.close(); // É uma boa prática fechar BufferedReader também
+
+      System.out.println("Digite o nome do doador");
+      String nomedoador = sc.nextLine();
+
+      int maxDoacoes = 5;
+      double[] doacoes = new double[maxDoacoes];
+      int count = 0;
+
+      while (true) {
+        System.out.println("Sistema de Gerenciamento de Doações");
+        System.out.println("Você deseja doar?");
+
+        System.out.println("Digite 1 para sim e 2 para não");
+        int opcao = sc.nextInt();
+        // comando para fechar caso coloque um numero diferente de 1 ou 2
+        if (opcao != 1 && opcao != 2) {
+          System.out.println("Opção inválida. Digite 1 para sim ou 2 para não.");
+          continue;
+        }
+        // comando pra fechar caso ele escrava 2
+        if (opcao == 2) {
+          break;
+        }
+
+        System.out.println("Escolha o tipo de doação");
+        System.out.println("1-Alimento");
+        System.out.println("2-Bebida");
+        System.out.println("3-Dinheiro");
+
+        int choice = sc.nextInt();
+
+        while (choice < 1 || choice > 3) {
+          System.out.println("Opção inválida. Por favor, escolha entre 1, 2 ou 3.");
+          choice = sc.nextInt();
+        }
+
+        System.out.println("Digite o valor da doação:");
+        double valorDoacao = sc.nextDouble();
+
+        if (count < maxDoacoes) {
+          doacoes[count] = valorDoacao;
+          count++;
+        } else {
+          System.out.println("Número máximo de doações alcançado.");
+          break;
+        }
+      }
+
+      // Calculando o total de doações
+      double totalDoacoes = 0;
+      for (int i = 0; i < count; i++) {
+        totalDoacoes += doacoes[i];
+      }
+
+      // Exibindo as doações e o total arrecadado
+      System.out.println("\nResumo das Doações:");
+      for (int i = 0; i < count; i++) {
+        System.out.println("Doação " + (i + 1) + ": " + doacoes[i]);
+      }
+      System.out.println("Total arrecadado: R$ " + totalDoacoes);
+
+    } catch (IOException ex) {
+      System.out.println("Erro ao acessar arquivo!");
+    } catch (Exception e) {
+      System.out.println("Erro: " + e.getMessage());
+    } finally {
+      System.out.println("Escreva novamente");
+      sc.close();
+    }
+  }
+}
